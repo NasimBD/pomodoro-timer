@@ -15,7 +15,6 @@ export const Timer = ({ running, setRunning, focusSpan, breakSpan}) => {
 
     useEffect(() => {
         if(running) {
-          
             const timeOutId = setTimeout(() =>
               {
                 if(remainingTime > 0){
@@ -27,12 +26,10 @@ export const Timer = ({ running, setRunning, focusSpan, breakSpan}) => {
                   setPhase(prevState => {
                     return prevState==='focus' ? 'break' : 'focus'
                   });
-                }
-              
+                }          
               }
               , 1000
-            )
-           
+            )         
               return () => clearInterval(timeOutId); 
         }
       }, [running, remainingTime])
@@ -42,8 +39,7 @@ export const Timer = ({ running, setRunning, focusSpan, breakSpan}) => {
     const controlRestart = () => {
         if(running) setRunning(!running);
         setRemainingTime(phase==="focus" ? focusSpan : breakSpan);
-        clearBlink();
-    
+        clearBlink();    
       }
     
       const controlRunning = () => {
@@ -63,8 +59,7 @@ export const Timer = ({ running, setRunning, focusSpan, breakSpan}) => {
     
       const clearBlink = () => {
         clearInterval(intervalId);
-        document.querySelector('.blink')?.classList.toggle('blink');
-    
+        document.querySelector('.blink')?.classList.toggle('blink');  
       }
 
   return (
