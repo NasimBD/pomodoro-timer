@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
+body, body *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive, sans-serif;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+    min-height:100vh;
+    background-color: rgb(243, 240, 240);
+    padding-top: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h1{
+    text-align: center;
+    color: rgb(7, 120, 139);
+    padding: 1rem;
+}
+
+p{
+    color:rgb(99, 98, 98);
+    line-height: 1.3;
+    padding: 1rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#console{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    max-width: 500px;
+}
+
+#console > * {
+    flex: 1 0 200px;
+    text-align: center;
+}
+
+#console h5{
+    margin-bottom: 1rem;
+    color: gray;
+}
+
+.console-buttons{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: center;
+    height: 2rem;
+}
+
+#console button {
+    cursor: pointer;
+    background-color: rgb(112, 3, 88);
+    width: 2rem;
+    color: white;
+    font-size: 1.3rem;
+    border: none;
+}
+
+#console button:nth-of-type(1){
+    border-radius: 4px 0 0 4px;
+}
+
+#console button:nth-of-type(2){
+    border-radius: 0 4px 4px 0;
+}
+
+#console button:hover{
+    background-color: #942c7a;
+}
+
+#console button:focus{
+    box-shadow: 0 0 2px 1px gray;
+}
+
+#console button:disabled{
+    background-color: gray;;
+    cursor: not-allowed;
+}
+
+#console span{
+    color: rgb(112, 112, 112);
+    background-color: rgb(228, 225, 225);
+    line-height: 2rem;
+    padding-left: 0.2rem;
+}
+
+.value{
+    font-weight: bold;
+}
+
+.unit {
+    padding-right: 0.2rem;
+}
+
+#timer-display{
+    padding: 4rem 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.focus{
+    background-image: linear-gradient(to bottom, #f77dd8, transparent);
+}
+
+.break{
+    background-image: linear-gradient(to bottom, rgb(109, 169, 238), transparent);
+}
+
+#timer-display h2{
+    text-transform: capitalize;
+    color: rgb(31, 31, 31);
+    margin-bottom: 1.2rem;
+    font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 5px;
+}
+
+#timer-display h3{
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: rgb(46, 44, 44);
+}
+
+#timer-display button{
+    font-size: 1.7rem;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    background-color: rgb(219, 217, 217);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 1px gray;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#timer-display button:nth-of-type(1){
+    margin-right: 0.6rem;
+}
+
+#timer-display button:hover{
+    background-color: rgb(209, 234, 243);
+}
+
+#timer-display button:active{
+    transform: translateY(2px);
+    background-color: rgb(206, 202, 202);
+}
+
+.blink{
+    background-image: linear-gradient(to bottom, rgb(248, 3, 16), transparent);
+}
+
+/* ----------------------------- media */
+/* ----------------------------- 1 */
+@media screen and (max-width:576px){
+    html{
+      font-size: 13px;
+    }
+    
+    #console{
+        margin: 0.5rem auto;
+    }
+
+    #console > * {
+        padding: 1rem;
+    }
+    }
+  
+  /* ----------------------------- 2 */
+  @media screen and (min-width:576px) and (max-width:769px){
+    html{
+      font-size: 15px;
+    }
+        
+    #console{
+        margin: 1rem auto;
+    }
+
+    #console > * {
+        padding: 1.5rem;
+    }
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  /* ----------------------------- 3 */
+  @media screen and (min-width:769px){
+    html{
+      font-size: 16px;
+    }
+    #posts li{
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+        
+    #console{
+        margin: 1rem auto;
+    }
+    
+    #console > * {
+        padding: 2rem;
+    }
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
